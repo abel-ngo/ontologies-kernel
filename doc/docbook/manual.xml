@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE book [
 
-<!ENTITY abelNGO "<orgname>Abel NGO</orgname>">
+<!ENTITY id "abelngo.ontology">
 
+<!ENTITY abelNGO "<orgname>Abel NGO</orgname>">
 
 <!ENTITY mdash   "&#8212;"> <!-- em dash, U+2014 ISOpub -->
 
@@ -11,10 +12,10 @@
 <book xmlns="http://docbook.org/ns/docbook"
       xmlns:xi="http://www.w3.org/2001/XInclude"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      xml:id="abelngo.ontology"
+      xml:id="&id;"
       >
   <info>
-    <title>Abel NGO Ontology Manual</title>
+    <title>&abelNGO; Ontology Manual</title>
     <author>
       <personname>Sean Champ</personname>
       <affiliation
@@ -24,10 +25,10 @@
     <date>9 August, 2014</date>
   </info>
 
-  <chapter xml:id="abelngo.ontology.kernel">
+  <chapter xml:id="&id;.kernel">
     <title>Core Ontologies</title>
 
-    <section  xml:id="abelngo.ontology.kernel.ov">
+    <section xml:id="&id;.kernel.ov">
       <title>Overview</title>
 
       <formalpara>
@@ -39,20 +40,145 @@
 
       <formalpara>
         <title>Root Namespace</title>
-        <para><systemitem
+        <para>&abelNGO; core ontologies shall be defined in an HTTP
+        namespace within the namespace of the &abelNGO; web site as
+        hosted at
+        <productname>GitHub Pages</productname>: <systemitem
                   >http://abel-ngo.github.io/km/rdf/</systemitem></para>
       </formalpara>
 
+
+      <section xml:id="&id;.kernel.ov.ent">
+        <title>&abelNGO; Core Entity Ontologies</title>
+
+        <formalpara>
+          <title>Ontological Concept Domains</title>
+          <para>
+            The effective set of the &abelNGO; <glossterm>core entity
+            ontologies</glossterm>
+            &mdash; that denoting, the set of ontologies defined by
+            &abelNGO; and those ontologies within the <glossterm>import
+            closure</glossterm> of those ontologies defined by &abelNGO;
+            &mdash; shall be comprised of ontologies within four
+            concept domains:
+            <simplelist>
+              <member>Biography</member>
+              <member>Social Organizations</member>
+              <member>Locales</member>
+              <member>Events</member>
+            </simplelist>
+          </para>
+        </formalpara>
+
+
+        <formalpara>
+          <title>Ontological Concept Layers</title>
+          <para>
+            Within the effective set of &abelNGO; <glossterm>core
+            entity ontologies</glossterm>, each <glossterm>concept
+            domain</glossterm> represented of those ontologies shall
+            be furthermore represented of ontologies
+            defined within two
+            <glossterm>concept layers</glossterm>:
+            <simplelist>
+              <member>Domain Classes Ontology</member>
+              <member>Domain Subclasses/Categorization Ontology</member>
+            </simplelist>
+          </para>
+        </formalpara>
+
+
+        <table xml:id="&id;.kernel.ov.ent.ont">
+          <caption>&abelNGO; Core Entity Ontologies</caption>
+          <thead>
+            <tr>
+              <td>Domain Classes Ontology</td>
+              <td>Domain Categorization Ontology</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Events</td>
+              <td>Event Types</td>
+            </tr>
+            <tr>
+              <td>Locales</td>
+              <td>Locales Types</td>
+            </tr>
+            <tr>
+              <td>
+                <acronym>FOAF</acronym>
+                <footnote>
+                  <para>
+                    In this core ontology, the <glossterm>domain
+                    classes ontology</glossterm> itself is defined by
+                    a <glossterm>third party</glossterm>, as
+                    independent of &abelNGO;
+                  </para>
+                </footnote>
+              </td>
+              <td>Organization Types</td>
+            </tr>
+            <tr>
+              <td>
+                Biography
+                <footnote>
+                  <para>
+                    The &abelNGO; core
+                    <glossterm>biography</glossterm> ontology should
+                    not be confused with the &abelNGO; core
+                    <glossterm>bibliographic</glossterm> ontology,
+                    though the name for each respective ontology may
+                    seem lexically similar.
+                  </para>
+                </footnote>
+                <footnote>
+                  <remark>TBD: Biography Classes Ontology</remark>
+                </footnote>
+            </td>
+              <td>
+                Biography Types
+                <footnote>
+                  <remark>TBD: Biography Categorization Ontology</remark>
+                </footnote>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <formalpara>
+          <title>Instance Ontologies</title>
+          <para>
+            Resources extending of the &abelNGO; <glossterm>core
+            entity ontologies</glossterm> may define individual
+            <glossterm>instance layers</glossterm>, extending on the
+            <glossterm>domain classes</glossterm> and/or
+            <glossterm>domain subclasses</glossterm> ontologies.
+          </para>
+        </formalpara>
+
+        <formalpara>
+          <title>Bibliographic Ontology</title>
+          <para>
+            In furthermore, &abelNGO; shall define a core
+            bibliographic ontology for application within individual
+            instance ontologies. The core bibliographic ontology,
+            similar to the core entity ontologies, shall be defined
+            as an extension onto existing works within public
+            academia
+          </para>
+        </formalpara>
+      </section>
     </section>
 
-    <section  xml:id="abelngo.ontology.kernel.pub">
+    <section xml:id="&id;.kernel.pub">
       <title>Ontology Publication Procedure</title>
 
       <para>
         The &abelNGO; Core Ontologies <citation
         xlink:href="https://github.com/abel-ngo/ontologies-kernel"
         >ontologies-kernel</citation> shall be published as web
-        content, under the  <productname>GitHub Pages</productname>
+        content, under the
         site for the &abelNGO; project,
         <citation
             xlink:href="https://github.com/abel-ngo/abel-ngo.github.io"
@@ -114,7 +240,8 @@
 
     </section>
 
-    <section>
+
+    <section  xml:id="&id;.kernel.ver">
       <title>Ontology Versioning</title>
 
       <simplesect>
@@ -201,7 +328,7 @@
     </section>
   </chapter>
 
-  <bibliography>
+  <bibliography xml:id="&id;.bib">
     <title>Works Consulted</title>
 
     <biblioentry xml:id="OWL2-Syntax" xreflabel="OWL2-Syntax">
