@@ -11,6 +11,7 @@
 <book xmlns="http://docbook.org/ns/docbook"
       xmlns:xi="http://www.w3.org/2001/XInclude"
       xmlns:xlink="http://www.w3.org/1999/xlink"
+      xml:id="abelngo.ontology"
       >
   <info>
     <title>Abel NGO Ontology Manual</title>
@@ -23,25 +24,28 @@
     <date>9 August, 2014</date>
   </info>
 
-  <chapter>
+  <chapter xml:id="abelngo.ontology.kernel">
     <title>Core Ontologies</title>
 
-    <section>
+    <section  xml:id="abelngo.ontology.kernel.ov">
       <title>Overview</title>
 
       <formalpara>
         <title>Source Repository</title>
-        <para><systemitem xlink:href="https://github.com/abel-ngo/ontologies-kernel">git@github.com:abel-ngo/ontologies-kernel</systemitem></para>
+        <para><systemitem
+                  xlink:href="https://github.com/abel-ngo/ontologies-kernel"
+                  >git@github.com:abel-ngo/ontologies-kernel</systemitem></para>
       </formalpara>
 
       <formalpara>
         <title>Root Namespace</title>
-        <para><systemitem>http://abel-ngo.github.io/km/rdf/</systemitem></para>
+        <para><systemitem
+                  >http://abel-ngo.github.io/km/rdf/</systemitem></para>
       </formalpara>
 
     </section>
 
-    <section>
+    <section  xml:id="abelngo.ontology.kernel.pub">
       <title>Ontology Publication Procedure</title>
 
       <para>
@@ -58,38 +62,39 @@
         <acronym>HTTP</acronym> view of the site:
       </para>
 
-        <procedure>
-          <step>
-            <para>Using <productname>Git</productname>, ensure that
-            the remote <emphasis><systemitem>abel-ngo.github.io</systemitem>
-            source repository</emphasis> (<varname>origin</varname>)
-            is cloned to the local
-            <varname>site-repository-dir</varname></para>
-          </step>
-          <step>
-            <para>
-              Copy the set of ontologies from
-              <varname>ontologies-kernel</varname> into the filesystem
-              directory:
-              <varname>site-repository-dir</varname><filename>/km/rdf/</filename>
-            </para>
-          </step>
-          <step>
-            <para>Using <productname>Git</productname>, add the new
-            and/or updated ontologies from
-            <varname>ontologies-kernel</varname>
-            into the local source repository at the pathname
-            <varname>site-repository-dir</varname> and check in the
-            addition as a change to the repository contents</para>
-          </step>
-          <step>
-            <para>Using <productname>Git</productname>, push the
-            change in <varname>site-repository-dir</varname> to the
-            remote <varname>origin</varname></para>
-          </step>
-        </procedure>
+      <procedure>
+        <step>
+          <para>Using <productname>Git</productname>, ensure that
+          the remote <emphasis><systemitem>abel-ngo.github.io</systemitem>
+          source repository</emphasis> (<varname>origin</varname>)
+          is cloned to the local
+          <varname>site-repository-dir</varname></para>
+        </step>
+        <step>
+          <para>
+            Copy the set of ontologies from
+            <varname>ontologies-kernel</varname> into the filesystem
+            directory:
+            <varname>site-repository-dir</varname><filename>/km/rdf/</filename>
+          </para>
+        </step>
+        <step>
+          <para>Using <productname>Git</productname>, add the new
+          and/or updated ontologies from
+          <varname>ontologies-kernel</varname>
+          into the local source repository at the pathname
+          <varname>site-repository-dir</varname> and check in the
+          addition as a change to the repository contents</para>
+        </step>
+        <step>
+          <para>Using <productname>Git</productname>, push the
+          change in <varname>site-repository-dir</varname> to the
+          remote <varname>origin</varname></para>
+        </step>
+      </procedure>
 
-        <para>To an extent, that workflow may be automated in using
+      <para>
+        To an extent, that workflow may be automated in using
         <productname>Ant</productname>. However, the automation would
         be complicated of the necessity for providing a user
         authentication service &mdash; as typically, utilizing an
@@ -105,7 +110,7 @@
         operating system platforms. Therefore, the tasks involving
         <productname>Git</productname> will be left for manual
         implementation by the developer.
-        </para>
+      </para>
 
     </section>
 
@@ -179,15 +184,17 @@
       <simplesect>
         <title>Version Specification in Ontology Metadata</title>
 
-        <para>An ontology may defined in a manner such as that the
-        ontology definition would, itself, be annotated with a version
-        specifier. In this manner, the &abelNGO; core ontologies shall
-        elect to use the Dublin Core Term
-        <systemitem>hasVersion</systemitem>, as defined via the
-        <glossterm>annotation property</glossterm> edition of the
-        Dublin Core Terms ontologies published by <personname>Simon
-        Reinhardt</personname> <citation><xref
-        linkend="bib.owldc"/></citation></para>
+        <para>
+          An ontology may be defined in a manner such as that the
+          ontology definition would, in itself, be annotated with a version
+          specifier. In this manner, the &abelNGO; core ontologies shall
+          elect to use the Dublin Core Term
+          <systemitem>hasVersion</systemitem>, as defined via the
+          <glossterm>annotation property</glossterm> edition of the
+          Dublin Core Terms ontologies published by <personname>Simon
+          Reinhardt</personname> <citation><xref
+          linkend="bib.owldc"/></citation>
+        </para>
 
       </simplesect>
 
