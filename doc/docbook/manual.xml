@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+
+<!ENTITY abelNGO "<orgname>Abel NGO</orgname>">
+
+
+<!ENTITY mdash   "&#8212;"> <!-- em dash, U+2014 ISOpub -->
+
+]>
+<?meta format="docbook" revision="5"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+  <info>
+    <title>Abel NGO Ontology Manual</title>
+    <author>
+      <personname>Sean Champ</personname>
+      <affiliation
+          xlink:href="http://abel-ngo.github.io/"
+          >&abelNGO;</affiliation>
+    </author>
+    <date>9 August, 2014</date>
+  </info>
+
+  <chapter>
+    <title>Core Ontologies</title>
+
+    <section>
+      <title>Overview</title>
+
+      <formalpara>
+        <title>Source Repository</title>
+        <para><systemitem xlink:href="https://github.com/abel-ngo/ontologies-kernel">git@github.com:abel-ngo/ontologies-kernel</systemitem></para>
+      </formalpara>
+
+      <formalpara>
+        <title>Root Namespace</title>
+        <para><systemitem>http://abel-ngo.github.io/km/rdf/</systemitem></para>
+      </formalpara>
+
+    </section>
+
+    <section>
+      <title>Ontology Publication Procedure</title>
+
+      <para>
+        The &abelNGO; Core Ontologies <citation
+        xlink:href="https://github.com/abel-ngo/ontologies-kernel"
+        >ontologies-kernel</citation> shall be published as web
+        content, under the  <productname>GitHub Pages</productname>
+        site for the &abelNGO; project,
+        <citation
+            xlink:href="https://github.com/abel-ngo/abel-ngo.github.io"
+            >abel-ngo.github.io</citation>. The following outline
+        provides an overview of tasks, for publishing the ontologies as
+        to be available as web content within  the
+        <acronym>HTTP</acronym> view of the site:
+      </para>
+
+        <procedure>
+          <step>
+            <para>Using <productname>Git</productname>, ensure that
+            the remote <emphasis><systemitem>abel-ngo.github.io</systemitem>
+            source repository</emphasis> (<varname>origin</varname>)
+            is cloned to the local
+            <varname>site-repository-dir</varname></para>
+          </step>
+          <step>
+            <para>
+              Copy the set of ontologies from
+              <varname>ontologies-kernel</varname> into the filesystem
+              directory:
+              <varname>site-repository-dir</varname><filename>/km/rdf/</filename>
+            </para>
+          </step>
+          <step>
+            <para>Using <productname>Git</productname>, add the new
+            and/or updated ontologies from
+            <varname>ontologies-kernel</varname>
+            into the local source repository at the pathname
+            <varname>site-repository-dir</varname> and check in the
+            addition as a change to the repository contents</para>
+          </step>
+          <step>
+            <para>Using <productname>Git</productname>, push the
+            change in <varname>site-repository-dir</varname> to the
+            remote <varname>origin</varname></para>
+          </step>
+        </procedure>
+
+        <para>To an extent, that workflow may be automated in using
+        <productname>Ant</productname>. However, the automation would
+        be complicated of the necessity for providing a user
+        authentication service &mdash; as typically, utilizing an
+        <acronym>SSH</acronym> <glossterm>key</glossterm> and an
+        <acronym>SSH</acronym>
+        <glossterm>authentication agent</glossterm> &mdash; for
+        authenticating the local user to the remote repository. The
+        integration with <productname>Git</productname> via
+        <productname>Ant</productname> would be furthermore
+        complicated, then, as for providing integration
+        with an <acronym>SSH</acronym>
+        <glossterm>authentication agent</glossterm>, across multiple
+        operating system platforms. Therefore, the tasks involving
+        <productname>Git</productname> will be left for manual
+        implementation by the developer.
+        </para>
+
+    </section>
+
+    <section>
+      <title>Ontology Versioning</title>
+
+      <simplesect>
+        <title>Versioning with Ontology <acronym>IRI</acronym></title>
+
+        <para>
+          An ontology extending on <acronym>OWL</acronym>
+          <productnumber>2</productnumber> may define an optional
+          ontology version <acronym>IRI</acronym>, as augmentative of
+          the primary ontology <acronym>IRI</acronym>. The ontology
+          version <acronym>IRI</acronym> would be relevant as when an
+          ontology would be published in multiple versions,
+          simultaneously.
+        </para>
+
+        <para>
+          For an ontology <varname>A</varname>
+          published in a versioned sequence of ontologies
+          <varname>A<subscript>1</subscript></varname> through
+          <varname>A<subscript>n</subscript></varname> &mdash; with
+          each ontology being defined with a unique ontology version
+          <acronym>IRI</acronym>, respectively
+          <varname>M<subscript>1</subscript></varname> through
+          <varname>M<subscript>n</subscript></varname> &mdash; it
+          may be expected that an ontology
+          <varname>A<subscript>n</subscript></varname> would be
+          available at the version <acronym>IRI</acronym>
+          <varname>M<subscript>n</subscript></varname>. Furthermore,
+          it may be expected that one of
+          <varname>A<subscript>1</subscript></varname> through
+          <varname>A<subscript>n</subscript></varname> would be
+          available at the primary ontology <acronym>IRI</acronym>,
+          <varname>M</varname>. In a practical regards, the
+          simultaneous availability of ontologies
+          <varname>A<subscript>1</subscript></varname> through
+          <varname>A<subscript>n</subscript></varname> might be
+          notably relevant, when the contents of an ontology
+          <varname>A<subscript>n</subscript></varname> may differ
+          substantially from the contents of ontology
+          <varname>A<subscript>n+1</subscript></varname>, such that
+          the ontology <varname>A<subscript>n</subscript></varname>
+          would not be <emphasis>forwards compatible</emphasis> with
+          the ontology <varname>A<subscript>n+1</subscript></varname>.
+        </para>
+        <para>
+          Although it is expected that the &abelNGO; core ontologies
+          may be published in multiple versions, however the &abelNGO;
+          core ontologies will not, by default, be defined with
+          ontology version <acronym>IRI</acronym>. If, at
+          some future time, any of the &abelNGO; core ontologies would
+          be defined in a version
+          <varname>M<subscript>n+1</subscript></varname>, such that
+          the ontology would not be <emphasis>backward
+          compatible</emphasis> with the ontology
+          <varname>M<subscript>n</subscript></varname>, then the
+          ontology <varname>M</varname> may be
+          defined as a new ontology <varname>N</varname>,
+          <emphasis>forked</emphasis> from <varname>M</varname>. That
+          would serve as to allow for the incompatible definition of
+          the ontology <varname>N</varname>, without adversely
+          affecting functionality of software systems extending on
+          the ontology <varname>M<subscript>n</subscript></varname>
+        </para>
+
+      </simplesect>
+
+      <simplesect>
+        <title>Version Specification in Ontology Metadata</title>
+
+        <para>An ontology may defined in a manner such as that the
+        ontology definition would, itself, be annotated with a version
+        specifier. In this manner, the &abelNGO; core ontologies shall
+        elect to use the Dublin Core Term
+        <systemitem>hasVersion</systemitem>, as defined via the
+        <glossterm>annotation property</glossterm> edition of the
+        Dublin Core Terms ontologies published by <personname>Simon
+        Reinhardt</personname> <citation><xref
+        linkend="bib.owldc"/></citation></para>
+
+      </simplesect>
+
+    </section>
+  </chapter>
+
+  <bibliography>
+    <title>Works Consulted</title>
+
+    <biblioentry xml:id="OWL2-Syntax" xreflabel="OWL2-Syntax">
+      <citetitle
+          xlink:href="http://www.w3.org/TR/2012/REC-owl2-syntax-20121211/"
+          >OWL 2 Web Ontology Language Structural Specification
+      and Functional-Style Syntax (Second Edition)</citetitle>
+      <pubdate>2012</pubdate>
+      <publisher>
+        <publishername>World Wide Web Consortium</publishername>
+      </publisher>
+    </biblioentry>
+
+    <biblioentry xml:id="bib.dct" xreflabel="DCT">
+      <citetitle
+          xlink:href="http://dublincore.org/documents/2012/06/14/dcmi-terms/"
+          >DCMI Metadata Terms</citetitle>
+      <pubdate>2012</pubdate>
+      <publisher>
+        <publishername>Dublin Core Metadata Initiative</publishername>
+      </publisher>
+    </biblioentry>
+
+    <biblioentry xml:id="bib.owldc" xreflabel="OWLDC">
+      <citetitle
+          xlink:href="http://bloody-byte.net/rdf/dc_owl2dl/"
+          >Dublin Core in OWL 2</citetitle>
+      <pubdate>2009</pubdate>
+      <author>
+        <personname>Simon Reinhardt</personname>
+      </author>
+    </biblioentry>
+
+  </bibliography>
+
+</book>
