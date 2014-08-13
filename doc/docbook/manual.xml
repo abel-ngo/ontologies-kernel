@@ -108,6 +108,144 @@
                   >http://abel-ngo.github.io/km/rdf/</systemitem></para>
       </formalpara>
 
+      <table>
+        <caption>Ontologies Imported by &abelNGO; Core Ontologies</caption>
+        <thead>
+          <tr>
+            <td>Context</td>
+            <td>Namespace</td>
+            <td><acronym>IRI</acronym></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bibliography</td>
+            <td>
+              <wordasword>bibo</wordasword>
+              <footnote>
+                <para>Referencing:
+                <citation xlink:href="http://bibliontology.com/"
+                          >Bibliographic Ontology
+                Specification</citation></para>
+              </footnote>
+            </td>
+            <td><link  xlink:href="http://purl.org/ontology/bibo/"
+                       >http://purl.org/ontology/bibo/</link></td>
+          </tr>
+          <tr>
+            <td>Events</td>
+            <td>
+              <wordasword>t</wordasword>
+              <footnote>
+                <para>Referencing:
+                <citation xlink:href="http://www.w3.org/TR/owl-time/"
+                          >Time Ontology in OWL</citation></para>
+              </footnote>
+            </td>
+            <td><link  xlink:href="http://www.w3.org/2006/time"
+                       >http://www.w3.org/2006/time</link></td>
+          </tr>
+          <tr>
+            <td>Entities</td>
+            <td>
+              <wordasword>foaf</wordasword>
+            <footnote>
+             <para>Referencing:
+             <citation
+                 xlink:href="http://xmlns.com/foaf/spec/"
+                 >FOAF Vocabulary Specification</citation></para>
+            </footnote></td>
+            <td><link  xlink:href="http://xmlns.com/foaf/0.1/"
+                       >http://xmlns.com/foaf/0.1/</link></td>
+          </tr>
+          <tr>
+            <td rowspan="5">
+              Locales
+              (<productname>GeoSPARQL</productname>)
+              <footnote>
+                <para>Referencing
+                <citation
+                    xlink:href="http://www.opengeospatial.org/standards/geosparql"
+                    ><trademark class="registered">OGC</trademark>
+                GeoSPARQL - A Geographic Query Language for RDF
+                Data</citation></para>
+              </footnote>
+            </td>
+            <td><wordasword>geo</wordasword></td>
+            <td>
+            <link
+                xlink:href="http://www.opengis.net/ont/geosparql"
+                >http://www.opengis.net/ont/geosparql</link>
+            </td>
+          </tr>
+          <tr>
+            <td><wordasword>geof</wordasword>
+            <footnote>
+              <para>Web view:
+              <citation
+                  xlink:href="http://def.seegrid.csiro.au/sissvoc/ogc-def/resource?uri=http://www.opengis.net/def/function/geosparql/"
+                  ><productname>GeoSPARQL</productname> Functions</citation></para>
+            </footnote>
+            </td>
+            <td>
+              <link xlink:href="http://www.opengis.net/def/function/geosparql/"
+                    >http://www.opengis.net/def/function/geosparql/</link>
+            </td>
+          </tr>
+          <tr>
+            <td><wordasword>geor</wordasword>
+            <footnote>
+              <para>Web view:
+              <citation
+                  xlink:href="http://def.seegrid.csiro.au/sissvoc/ogc-def/resource?uri=http://www.opengis.net/def/rule/geosparql/"
+                  ><productname>GeoSPARQL</productname> Rules</citation>
+              </para>
+            </footnote>
+            </td>
+            <td><link
+                    xlink:href="http://www.opengis.net/def/rule/geosparql/"
+                    >http://www.opengis.net/def/rule/geosparql/</link></td>
+          </tr>
+          <tr>
+            <td><wordasword>gml</wordasword></td>
+            <td><link  xlink:href="http://www.opengis.net/ont/gml"
+                       >http://www.opengis.net/ont/gml</link></td>
+          </tr>
+          <tr>
+            <td><wordasword>sf</wordasword></td>
+            <td><link  xlink:href="http://www.opengis.net/ont/sf"
+                       >http://www.opengis.net/ont/sf</link></td>
+          </tr>
+          <tr>
+            <td rowspan="2">Locales
+            (<productname>GeoNames</productname>)
+            <footnote>
+              <para>
+                Referencing
+                <citation
+                    xlink:href="http://www.geonames.org/ontology/documentation.html"
+                    >GeoNames Ontology - Geo Semantic Web</citation>
+              </para>
+            </footnote>
+            </td>
+            <td>gno</td>
+            <td>
+              <link
+                  xlink:href="http://www.geonames.org/ontology/ontology_v3.1.rdf"
+                  >http://www.geonames.org/ontology/ontology_v3.1.rdf</link>
+            </td>
+          </tr>
+          <tr>
+            <td>gnm</td>
+            <td>
+              <link
+                  xlink:href="http://www.geonames.org/ontology/mappings_v3.01.rdf"
+                  >http://www.geonames.org/ontology/mappings_v3.01.rdf</link>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
 
       <section xml:id="&id;.kernel.ov.ent">
         <title>&abelNGO; Domain Ontologies</title>

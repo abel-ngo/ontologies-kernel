@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1407896233039" name="http://purl.org/ontology/bibo/" uri="bibo.xml.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1407896233039" name="http://www.geonames.org/ontology" uri="gn/ontology_v3.1.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1407896233039" name="http://www.opengis.net/ont/geosparql" uri="geosparql/geo/geosparql_vocab_all.rdf.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1407896233039" name="http://www.opengis.net/ont/gml" uri="geosparql/gml/gml_32_geometries.rdf.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1407896233039" name="http://www.opengis.net/ont/sf" uri="geosparql/sf/simple_features_geometries.rdf.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1407896233039" name="http://www.w3.org/2004/02/skos/core" uri="skos.rdf"/>
+    </group>
+</catalog>
