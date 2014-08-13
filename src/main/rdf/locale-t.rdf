@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY loc-t "http://abel-ngo.github.io/km/rdf/locale-t.rdf#" >
+]>
+
+
+<rdf:RDF xmlns="http://abel-ngo.github.io/km/rdf/locale-t.rdf#"
+     xml:base="http://abel-ngo.github.io/km/rdf/locale-t.rdf"
+     xmlns:loc-t="http://abel-ngo.github.io/km/rdf/locale-t.rdf#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://abel-ngo.github.io/km/rdf/locale-t.rdf">
+        <owl:imports rdf:resource="http://abel-ngo.github.io/km/rdf/locale.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Brcd -->
+
+    <owl:Class rdf:about="&loc-t;Brcd">
+        <rdfs:label xml:lang="en">Barricade</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;LogFeat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Church -->
+
+    <owl:Class rdf:about="&loc-t;Church">
+        <rdfs:label xml:lang="en">Church</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;PlcWrshp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#CivLoc -->
+
+    <owl:Class rdf:about="&loc-t;CivLoc">
+        <rdfs:label xml:lang="en">Civic Locale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/locale.rdf#Locale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#CultrlLoc -->
+
+    <owl:Class rdf:about="&loc-t;CultrlLoc">
+        <rdfs:label xml:lang="en">Cultural Locale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/locale.rdf#Locale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#ERW -->
+
+    <owl:Class rdf:about="&loc-t;ERW">
+        <rdfs:label xml:lang="en">Explosive Remnants of War</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;Hazard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#FldPost -->
+
+    <owl:Class rdf:about="&loc-t;FldPost">
+        <rdfs:label xml:lang="en">Field Outpost</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;MilPost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Gate -->
+
+    <owl:Class rdf:about="&loc-t;Gate">
+        <rdfs:label xml:lang="en">Gate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;LogFeat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#GovtLoc -->
+
+    <owl:Class rdf:about="&loc-t;GovtLoc">
+        <rdfs:label xml:lang="en">Governmental Locale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/locale.rdf#Locale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Hazard -->
+
+    <owl:Class rdf:about="&loc-t;Hazard">
+        <rdfs:label xml:lang="en">Hazard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Hospital -->
+
+    <owl:Class rdf:about="&loc-t;Hospital">
+        <rdfs:label xml:lang="en">Hospital</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;CivLoc"/>
+        <rdfs:subClassOf rdf:resource="&loc-t;MedicalLocale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#LogDmg -->
+
+    <owl:Class rdf:about="&loc-t;LogDmg">
+        <rdfs:label xml:lang="en">Logistical Damage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;Hazard"/>
+        <rdfs:subClassOf rdf:resource="&loc-t;LogFeat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#LogFeat -->
+
+    <owl:Class rdf:about="&loc-t;LogFeat">
+        <rdfs:label xml:lang="en">Logistical Feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#MedicalLocale -->
+
+    <owl:Class rdf:about="&loc-t;MedicalLocale">
+        <rdfs:label xml:lang="en">Medical Locale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/locale.rdf#Locale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#MilHosp -->
+
+    <owl:Class rdf:about="&loc-t;MilHosp">
+        <rdfs:label xml:lang="en">Military Hospital</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&loc-t;Hospital"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#ehInside"/>
+                        <owl:someValuesFrom rdf:resource="&loc-t;MilLoc"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&loc-t;MedicalLocale"/>
+        <rdfs:subClassOf rdf:resource="&loc-t;MilLoc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#MilLoc -->
+
+    <owl:Class rdf:about="&loc-t;MilLoc">
+        <rdfs:label xml:lang="en">Military Locale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/locale.rdf#Locale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#MilPost -->
+
+    <owl:Class rdf:about="&loc-t;MilPost">
+        <rdfs:label xml:lang="en">Military Post</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;MilLoc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Mines -->
+
+    <owl:Class rdf:about="&loc-t;Mines">
+        <rdfs:label xml:lang="en">Land Mines</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;ERW"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Msq -->
+
+    <owl:Class rdf:about="&loc-t;Msq">
+        <rdfs:label xml:lang="en">Mosque</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;PlcWrshp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#PlcWrshp -->
+
+    <owl:Class rdf:about="&loc-t;PlcWrshp">
+        <rdfs:label xml:lang="en">Place of Worship</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;RelgLoc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#RelgLoc -->
+
+    <owl:Class rdf:about="&loc-t;RelgLoc">
+        <rdfs:label xml:lang="en">Religious Locale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;CultrlLoc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Road -->
+
+    <owl:Class rdf:about="&loc-t;Road">
+        <rdfs:label xml:lang="en">Road</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;LogFeat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#Syng -->
+
+    <owl:Class rdf:about="&loc-t;Syng">
+        <rdfs:label xml:lang="en">Synagogue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;PlcWrshp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#TrbWrshp -->
+
+    <owl:Class rdf:about="&loc-t;TrbWrshp">
+        <rdfs:label xml:lang="en">Place of Tribal Worship</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;PlcWrshp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#UXO -->
+
+    <owl:Class rdf:about="&loc-t;UXO">
+        <rdfs:label xml:lang="en">Unexploded Ordinance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;ERW"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#UXOCB -->
+
+    <owl:Class rdf:about="&loc-t;UXOCB">
+        <rdfs:label xml:lang="en">Unexploded Cluster Bomb Munitions</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;UXO"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/locale-t.rdf#WeapEmplc -->
+
+    <owl:Class rdf:about="&loc-t;WeapEmplc">
+        <rdfs:label xml:lang="en">Weapons Emplacement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&loc-t;MilLoc"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
