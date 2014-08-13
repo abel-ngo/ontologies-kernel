@@ -31,6 +31,67 @@
     <section xml:id="&id;.kernel.ov">
       <title>Overview</title>
 
+      <para>The &abelNGO; core ontologies <citation
+      xlink:href="https://github.com/abel-ngo/ontologies-kernel"
+      >ontologies-kernel</citation> are defined of three primary
+      <glossterm>domain ontologies</glossterm>, as well as a
+      <glossterm>bibliographical ontology</glossterm> and a set of
+      <glossterm>domain subset ontologies</glossterm>. These
+      ontologies are defined as to provide a uniform reference
+      framework for <glossterm>instance ontologies</glossterm>, as may
+      be defined within the &abelNGO; web portal and within distinct
+      ontologies published by &abelNGO; </para>
+
+      <para>This onologies model is thus defined in three primary
+      layers. The first two layers, in this model, are defined of the
+      &abelNGO; core ontologies.</para>
+
+      <itemizedlist mark="I">
+        <listitem>
+          <formalpara><title>Domain Ontologies</title>
+          <para>Events, Entities, Locales</para>
+          </formalpara>
+        </listitem>
+        <listitem>
+          <formalpara><title>Domain Subsets</title>
+          <para>Events types, Institutions and Agencies, Personas,
+          Locales</para>
+          </formalpara>
+        </listitem>
+        <listitem>
+          <formalpara><title>Instance Ontologies</title>
+          <para>Application of Domain Subset Ontologies<footnote>
+          <para>For the initial <foreignphrase>proof of
+          concept</foreignphrase>, the instance ontologies shall be
+          defined onto a time period extending at least from Ukraine's
+          independence, up to present circumstances. The geographic
+          context of those instance ontologies shall be defined as
+          with regards to a geographical region including
+          of:
+          <simplelist>
+          <member>Ukraine</member>
+          <member>Self-declared republics establishing independence from
+          institutions in Kiev</member>
+          <member>Crimea, as around her democratic realignment with
+          Russia</member>
+          </simplelist></para>
+          </footnote></para>
+          </formalpara>
+        </listitem>
+      </itemizedlist>
+
+      <sidebar>
+        <title>Hazards: Explosive Remnants of War
+        (<acronym>ERW</acronym>)</title>
+        <para>If it may be appropriate to define an additional
+        ontological reference structure for purpose of denoting
+        hazards now existing in  Ukraine, certainly the hazards of
+        land mines and of unexploded munitions should be well marked,
+        locally &mdash; for safety of all people in Ukraine &mdash;
+        pending a humanitarian countermine activity by qualified
+        engineers.</para>
+      </sidebar>
+
       <formalpara>
         <title>Source Repository</title>
         <para><systemitem
@@ -60,41 +121,45 @@
             &mdash; that denoting, the set of ontologies defined by
             &abelNGO; and those ontologies within the <glossterm>import
             closure</glossterm> of those ontologies defined by &abelNGO;
-            &mdash; shall be comprised of ontologies within four
-            reference domains:
+            &mdash; shall be comprised of ontologies within three
+            primary <glossterm>reference domains</glossterm>:
             <simplelist>
-              <member>Biography</member>
-              <member>Social Organizations</member>
-              <member>Locales</member>
               <member>Events</member>
+              <member>Social Entities and Personas</member>
+              <member>Locales and Local Features</member>
             </simplelist>
           </para>
         </formalpara>
-
 
         <formalpara>
-          <title>Ontological Concept Layers</title>
+          <title>Domain Subset Ontologies</title>
           <para>
-            Within the effective set of &abelNGO; <glossterm>core
-            entity ontologies</glossterm>, each <glossterm>reference
-            domain</glossterm> represented of those ontologies shall
-            be furthermore represented of ontologies
-            defined within two
-            <glossterm>concept layers</glossterm>:
-            <simplelist>
-              <member>Domain Classes Ontology</member>
-              <member>Domain Subclasses/Categorization Ontology</member>
-            </simplelist>
+            Each of the primary <glossterm>domain ontologies</glossterm>
+            in the &abelNGO; ontologies kernel is extended with one or
+            more ontologies for contextual typing and categorization of
+            known events, entities, and locales, within the respective
+            <glossterm>reference domain</glossterm>. The
+            <glossterm>domain subset ontologies</glossterm> shall be
+            defined as to provide a uniform reference framework for
+            extension within individual <glossterm>instance
+            ontologies</glossterm>
           </para>
         </formalpara>
 
+        <para>
+          Moreover, an ontology is defined within the ontologies
+          kernel, for definition of structural bibliographical
+          references. This ontology is defined as to be applied in
+          development of later <glossterm>instance
+          ontologies</glossterm>.
+        </para>
 
         <table xml:id="&id;.kernel.ov.ent.ont">
-          <caption>&abelNGO; Domain Ontologies</caption>
+          <caption>&abelNGO; Domain Ontologies and Domain Subsets</caption>
           <thead>
             <tr>
-              <td>Domain Classes Ontology</td>
-              <td>Domain Categorization Ontology</td>
+              <td>Reference Domain Ontology</td>
+              <td>Domain Subset Ontologies</td>
             </tr>
           </thead>
           <tbody>
@@ -107,18 +172,8 @@
               <td>Locales Types</td>
             </tr>
             <tr>
-              <td>
-                <acronym>FOAF</acronym>
-                <footnote>
-                  <para>
-                    In this core ontology, the <glossterm>domain
-                    classes ontology</glossterm> itself is defined by
-                    a <glossterm>third party</glossterm>, as
-                    independent of &abelNGO;
-                  </para>
-                </footnote>
-              </td>
-              <td>Organization Types</td>
+              <td>Entities</td>
+              <td>Institutions and Agencies, Personas</td>
             </tr>
             <tr>
               <td>
@@ -134,13 +189,13 @@
                   </para>
                 </footnote>
                 <footnote>
-                  <remark>TBD: Biography Classes Ontology</remark>
+                  <remark>TBD: Biographical Reference Ontology</remark>
                 </footnote>
             </td>
               <td>
                 Biography Types
                 <footnote>
-                  <remark>TBD: Biography Categorization Ontology</remark>
+                  <remark>TBD: Biographical Categorization Ontology</remark>
                 </footnote>
               </td>
             </tr>
@@ -152,23 +207,13 @@
           <para>
             Resources extending of the &abelNGO; <glossterm>core
             entity ontologies</glossterm> may define individual
-            <glossterm>instance layers</glossterm>, extending on the
-            <glossterm>domain classes</glossterm> and/or
-            <glossterm>domain subclasses</glossterm> ontologies.
+            <glossterm>instance layers</glossterm>, as extending on
+            the respective <glossterm>reference domain
+            ontologies</glossterm> and extensional <glossterm>domain
+            subset ontologies</glossterm>.
           </para>
         </formalpara>
 
-        <formalpara>
-          <title>Bibliographic Ontology</title>
-          <para>
-            In furthermore, &abelNGO; shall define a core
-            bibliographic ontology for application within individual
-            instance ontologies. The core bibliographic ontology,
-            similar to the domain ontologies, shall be defined
-            as an extension onto existing works within public
-            discourse and public academia
-          </para>
-        </formalpara>
       </section>
     </section>
 
