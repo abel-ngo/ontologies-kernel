@@ -49,18 +49,19 @@
 
 
       <section xml:id="&id;.kernel.ov.ent">
-        <title>&abelNGO; Core Entity Ontologies</title>
+        <title>&abelNGO; Domain Ontologies</title>
 
         <formalpara>
-          <title>Ontological Concept Domains</title>
+          <title>Ontological Reference Domains</title>
+
           <para>
-            The effective set of the &abelNGO; <glossterm>core entity
+            The effective set of the &abelNGO; <glossterm>domain
             ontologies</glossterm>
             &mdash; that denoting, the set of ontologies defined by
             &abelNGO; and those ontologies within the <glossterm>import
             closure</glossterm> of those ontologies defined by &abelNGO;
             &mdash; shall be comprised of ontologies within four
-            concept domains:
+            reference domains:
             <simplelist>
               <member>Biography</member>
               <member>Social Organizations</member>
@@ -75,7 +76,7 @@
           <title>Ontological Concept Layers</title>
           <para>
             Within the effective set of &abelNGO; <glossterm>core
-            entity ontologies</glossterm>, each <glossterm>concept
+            entity ontologies</glossterm>, each <glossterm>reference
             domain</glossterm> represented of those ontologies shall
             be furthermore represented of ontologies
             defined within two
@@ -89,7 +90,7 @@
 
 
         <table xml:id="&id;.kernel.ov.ent.ont">
-          <caption>&abelNGO; Core Entity Ontologies</caption>
+          <caption>&abelNGO; Domain Ontologies</caption>
           <thead>
             <tr>
               <td>Domain Classes Ontology</td>
@@ -163,9 +164,9 @@
             In furthermore, &abelNGO; shall define a core
             bibliographic ontology for application within individual
             instance ontologies. The core bibliographic ontology,
-            similar to the core entity ontologies, shall be defined
+            similar to the domain ontologies, shall be defined
             as an extension onto existing works within public
-            academia
+            discourse and public academia
           </para>
         </formalpara>
       </section>
