@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://abel-ngo.github.io/km/rdf/entity.rdf" uri="entity.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://xmlns.com/foaf/0.1/" uri="upstream/20140114.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://abel-ngo.github.io/km/rdf/locale.rdf" uri="locale.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://abel-ngo.github.io/km/rdf/event.rdf" uri="event.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://abel-ngo.github.io/km/rdf/locale.rdf" uri="locale.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://purl.org/ontology/bibo/" uri="upstream/bibo.xml.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://www.geonames.org/ontology" uri="upstream/gn/ontology_v3.1.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://www.opengis.net/ont/geosparql" uri="upstream/geosparql/geo/geosparql_vocab_all.rdf.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://www.opengis.net/ont/gml" uri="upstream/geosparql/gml/gml_32_geometries.rdf.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://www.opengis.net/ont/sf" uri="upstream/geosparql/sf/simple_features_geometries.rdf.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1407899871775" name="http://www.w3.org/2004/02/skos/core" uri="upstream/skos.rdf"/>
+    </group>
+</catalog>

@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ent "http://abel-ngo.github.io/km/rdf/entity.rdf#" >
+]>
+
+
+<rdf:RDF xmlns="http://abel-ngo.github.io/km/rdf/entity.rdf#"
+     xml:base="http://abel-ngo.github.io/km/rdf/entity.rdf"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ent="http://abel-ngo.github.io/km/rdf/entity.rdf#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://abel-ngo.github.io/km/rdf/entity.rdf">
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#mngBy -->
+
+    <owl:ObjectProperty rdf:about="&ent;mngBy">
+        <rdfs:label xml:lang="en">managed by</rdfs:label>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <owl:inverseOf rdf:resource="&ent;mngEnt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#mngEnt -->
+
+    <owl:ObjectProperty rdf:about="&ent;mngEnt">
+        <rdfs:label xml:lang="en">managing entity</rdfs:label>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Agency -->
+
+    <owl:Class rdf:about="&ent;Agency">
+        <rdfs:label xml:lang="en">Agency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;Practlnst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Business -->
+
+    <owl:Class rdf:about="&ent;Business">
+        <rdfs:label xml:lang="en">Business</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;Practlnst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#ComcInst -->
+
+    <owl:Class rdf:about="&ent;ComcInst">
+        <rdfs:label xml:lang="en">Commercial Institution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;StructInst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Entity -->
+
+    <owl:Class rdf:about="&ent;Entity">
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#GovInst -->
+
+    <owl:Class rdf:about="&ent;GovInst">
+        <rdfs:label xml:lang="en">Governmental Institution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;StructInst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#GroupEntity -->
+
+    <owl:Class rdf:about="&ent;GroupEntity">
+        <rdfs:label xml:lang="en">Group</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+        <rdfs:subClassOf rdf:resource="&ent;SocialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Persona -->
+
+    <owl:Class rdf:about="&ent;Persona">
+        <rdfs:label xml:lang="en">Persona</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf rdf:resource="&ent;Entity"/>
+        <owl:disjointWith rdf:resource="&ent;SocialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Practlnst -->
+
+    <owl:Class rdf:about="&ent;Practlnst">
+        <rdfs:label xml:lang="en">Practical Institution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;SocialInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#SocInst -->
+
+    <owl:Class rdf:about="&ent;SocInst">
+        <rdfs:label xml:lang="en">Social Institution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;StructInst"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#SocialEntity -->
+
+    <owl:Class rdf:about="&ent;SocialEntity">
+        <rdfs:label xml:lang="en">Social Entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&ent;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#SocialInstitution -->
+
+    <owl:Class rdf:about="&ent;SocialInstitution">
+        <rdfs:label xml:lang="en">Social Institution</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:subClassOf rdf:resource="&ent;SocialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#StructInst -->
+
+    <owl:Class rdf:about="&ent;StructInst">
+        <rdfs:label xml:lang="en">Structural Institution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;SocialInstitution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Tribe -->
+
+    <owl:Class rdf:about="&ent;Tribe">
+        <rdfs:label xml:lang="en">Tribe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;GroupEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ent;ComcInst"/>
+            <rdf:Description rdf:about="&ent;GovInst"/>
+            <rdf:Description rdf:about="&ent;SocInst"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

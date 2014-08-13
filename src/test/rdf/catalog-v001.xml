@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.w3.org/2006/time" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/upstream/time"/>
+    <uri id="User Entered Import Resolution" name="http://www.geonames.org/ontology" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/upstream/gn/ontology_v3.1.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://abel-ngo.github.io/km/rdf/locale.rdf" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/locale.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://xmlns.com/foaf/0.1/" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/upstream/20140114.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://abel-ngo.github.io/km/rdf/entity.rdf" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/entity.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/ontology/bibo/" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/upstream/bibo.xml.owl"/>
+    <uri id="Imports Wizard Entry" name="http://abel-ngo.github.io/km/rdf/bib.rdf" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/bib.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://abel-ngo.github.io/km/rdf/event.rdf" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/event.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1407902680363" name="http://abel-ngo.github.io/km/rdf/event-test.rdf" uri="event-test.rdf"/>
+    </group>
+</catalog>
