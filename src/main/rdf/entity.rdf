@@ -34,9 +34,9 @@
     
 
 
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#constitutesRole -->
+    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#constRole -->
 
-    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#constitutesRole">
+    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#constRole">
         <rdfs:label xml:lang="en">constitutes role</rdfs:label>
         <rdfs:range rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
         <rdfs:domain rdf:resource="&ent;SocialEntity"/>
@@ -64,6 +64,17 @@
     
 
 
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#hasMember -->
+
+    <owl:ObjectProperty rdf:about="&ent;hasMember">
+        <rdfs:label xml:lang="en">has member</rdfs:label>
+        <owl:inverseOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf"/>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#mngBy -->
 
     <owl:ObjectProperty rdf:about="&ent;mngBy">
@@ -81,6 +92,28 @@
         <rdfs:label xml:lang="en">managing entity</rdfs:label>
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#roleConstBy -->
+
+    <owl:ObjectProperty rdf:about="&ent;roleConstBy">
+        <rdfs:label xml:lang="en">role constituted by</rdfs:label>
+        <rdfs:domain rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
+        <owl:inverseOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#constRole"/>
+        <rdfs:range rdf:resource="&ent;SocialEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#roleFulfilledBy -->
+
+    <owl:ObjectProperty rdf:about="&ent;roleFulfilledBy">
+        <rdfs:label xml:lang="en">role fulfilled by</rdfs:label>
+        <rdfs:domain rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
+        <owl:inverseOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole"/>
+        <rdfs:range rdf:resource="&ent;Entity"/>
     </owl:ObjectProperty>
     
 
