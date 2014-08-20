@@ -44,93 +44,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#constitutesRole -->
-
-    <owl:ObjectProperty rdf:about="&entTest;constitutesRole">
-        <rdfs:label xml:lang="en">constitutes role</rdfs:label>
-        <rdfs:range rdf:resource="&entTest;Role"/>
-        <rdfs:domain rdf:resource="&ent;SocialEntity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole -->
-
-    <owl:ObjectProperty rdf:about="&entTest;fulfillsRole">
-        <rdfs:label xml:lang="en">fulfills role</rdfs:label>
-        <rdfs:range rdf:resource="&entTest;Role"/>
-        <rdfs:domain rdf:resource="&ent;Entity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf -->
-
-    <owl:ObjectProperty rdf:about="&entTest;memberOf">
-        <rdfs:label xml:lang="en">member of</rdfs:label>
-        <rdfs:range rdf:resource="&ent;Entity"/>
-        <rdfs:domain rdf:resource="&ent;Entity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#FoundryRole -->
-
-    <owl:Class rdf:about="&entTest;FoundryRole">
-        <rdfs:label xml:lang="en">Foundry Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&entTest;Role"/>
-    </owl:Class>
-    
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#LeadershipRole -->
-
-    <owl:Class rdf:about="&entTest;LeadershipRole">
-        <rdfs:label xml:lang="en">Leadership Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&entTest;Role"/>
-    </owl:Class>
-    
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole -->
-
-    <owl:Class rdf:about="&entTest;MembershipRole">
-        <rdfs:label xml:lang="en">Membership Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&entTest;Role"/>
-    </owl:Class>
-    
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role -->
-
-    <owl:Class rdf:about="&entTest;Role">
-        <rdfs:label xml:lang="en">Role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -282,14 +195,6 @@
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="&entTest;a"/>
-                        <swrl:argument1 rdf:resource="&entTest;c"/>
-                        <swrl:propertyPredicate rdf:resource="&entTest;memberOf"/>
-                    </rdf:Description>
-                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -303,6 +208,14 @@
                         </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&entTest;a"/>
+                        <swrl:argument1 rdf:resource="&entTest;c"/>
+                        <swrl:propertyPredicate rdf:resource="&entTest;memberOf"/>
+                    </rdf:Description>
+                </rdf:first>
             </rdf:Description>
         </swrl:body>
     </rdf:Description>
