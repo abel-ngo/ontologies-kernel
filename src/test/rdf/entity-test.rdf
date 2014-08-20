@@ -2,16 +2,17 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY j.0 "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
     <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY j.1 "http://abel-ngo.github.io/km/rdf/entity.rdf#" >
+    <!ENTITY ent "http://abel-ngo.github.io/km/rdf/entity.rdf#" >
     <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
     <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY entTest "http://abel-ngo.github.io/km/rdf/entity-test.rdf#" >
     <!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" >
     <!ENTITY sqwrl "http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#" >
 ]>
@@ -20,9 +21,10 @@
 <rdf:RDF xmlns="http://abel-ngo.github.io/km/rdf/entity-test.rdf#"
      xml:base="http://abel-ngo.github.io/km/rdf/entity-test.rdf"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
-     xmlns:j.1="http://abel-ngo.github.io/km/rdf/entity.rdf#"
-     xmlns:j.0="http://xmlns.com/foaf/0.1/"
+     xmlns:entTest="http://abel-ngo.github.io/km/rdf/entity-test.rdf#"
+     xmlns:ent="http://abel-ngo.github.io/km/rdf/entity.rdf#"
      xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
@@ -52,30 +54,30 @@
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#constitutesRole -->
 
-    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#constitutesRole">
+    <owl:ObjectProperty rdf:about="&entTest;constitutesRole">
         <rdfs:label xml:lang="en">constitutes role</rdfs:label>
-        <rdfs:range rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
-        <rdfs:domain rdf:resource="&j.1;SocialEntity"/>
+        <rdfs:range rdf:resource="&entTest;Role"/>
+        <rdfs:domain rdf:resource="&ent;SocialEntity"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole -->
 
-    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole">
+    <owl:ObjectProperty rdf:about="&entTest;fulfillsRole">
         <rdfs:label xml:lang="en">fulfills role</rdfs:label>
-        <rdfs:range rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
-        <rdfs:domain rdf:resource="&j.1;Entity"/>
+        <rdfs:range rdf:resource="&entTest;Role"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf -->
 
-    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf">
+    <owl:ObjectProperty rdf:about="&entTest;memberOf">
         <rdfs:label xml:lang="en">member of</rdfs:label>
-        <rdfs:range rdf:resource="&j.1;Entity"/>
-        <rdfs:domain rdf:resource="&j.1;Entity"/>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
     </owl:ObjectProperty>
     
 
@@ -93,34 +95,34 @@
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#FoundryRole -->
 
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#FoundryRole">
+    <owl:Class rdf:about="&entTest;FoundryRole">
         <rdfs:label xml:lang="en">Foundry Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
+        <rdfs:subClassOf rdf:resource="&entTest;Role"/>
     </owl:Class>
     
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#LeadershipRole -->
 
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#LeadershipRole">
+    <owl:Class rdf:about="&entTest;LeadershipRole">
         <rdfs:label xml:lang="en">Leadership Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
+        <rdfs:subClassOf rdf:resource="&entTest;Role"/>
     </owl:Class>
     
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole -->
 
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole">
+    <owl:Class rdf:about="&entTest;MembershipRole">
         <rdfs:label xml:lang="en">Membership Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
+        <rdfs:subClassOf rdf:resource="&entTest;Role"/>
     </owl:Class>
     
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role -->
 
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role">
+    <owl:Class rdf:about="&entTest;Role">
         <rdfs:label xml:lang="en">Role</rdfs:label>
     </owl:Class>
     
@@ -139,18 +141,18 @@
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#Chewbacca -->
 
-    <owl:NamedIndividual rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Chewbacca">
-        <rdf:type rdf:resource="&j.0;Person"/>
+    <owl:NamedIndividual rdf:about="&entTest;Chewbacca">
+        <rdf:type rdf:resource="&foaf;Person"/>
         <rdfs:label xml:lang="en">Chewbacca</rdfs:label>
-        <fulfillsRole rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieGroupMember"/>
+        <fulfillsRole rdf:resource="&entTest;WookieGroupMember"/>
     </owl:NamedIndividual>
     
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieGroupFounder -->
 
-    <owl:NamedIndividual rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieGroupFounder">
-        <rdf:type rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#FoundryRole"/>
+    <owl:NamedIndividual rdf:about="&entTest;WookieGroupFounder">
+        <rdf:type rdf:resource="&entTest;FoundryRole"/>
         <rdfs:label xml:lang="en">Wookie Group Founder</rdfs:label>
     </owl:NamedIndividual>
     
@@ -158,8 +160,8 @@
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieGroupMember -->
 
-    <owl:NamedIndividual rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieGroupMember">
-        <rdf:type rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole"/>
+    <owl:NamedIndividual rdf:about="&entTest;WookieGroupMember">
+        <rdf:type rdf:resource="&entTest;MembershipRole"/>
         <rdfs:label xml:lang="en">Wookie Group Member</rdfs:label>
     </owl:NamedIndividual>
     
@@ -167,8 +169,8 @@
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieLeader -->
 
-    <owl:NamedIndividual rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieLeader">
-        <rdf:type rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#LeadershipRole"/>
+    <owl:NamedIndividual rdf:about="&entTest;WookieLeader">
+        <rdf:type rdf:resource="&entTest;LeadershipRole"/>
         <rdfs:label xml:lang="en">Wookie Group Leader</rdfs:label>
     </owl:NamedIndividual>
     
@@ -176,10 +178,10 @@
 
     <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieTribe -->
 
-    <owl:NamedIndividual rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieTribe">
-        <rdf:type rdf:resource="&j.1;Tribe"/>
+    <owl:NamedIndividual rdf:about="&entTest;WookieTribe">
+        <rdf:type rdf:resource="&ent;Tribe"/>
         <rdfs:label xml:lang="en">Wookie Group</rdfs:label>
-        <constitutesRole rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#WookieGroupMember"/>
+        <constitutesRole rdf:resource="&entTest;WookieGroupMember"/>
     </owl:NamedIndividual>
     
 
@@ -192,13 +194,13 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#a">
+    <rdf:Description rdf:about="&entTest;a">
         <rdf:type rdf:resource="&swrl;Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#b">
+    <rdf:Description rdf:about="&entTest;b">
         <rdf:type rdf:resource="&swrl;Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#c">
+    <rdf:Description rdf:about="&entTest;c">
         <rdf:type rdf:resource="&swrl;Variable"/>
     </rdf:Description>
     <rdf:Description>
@@ -206,13 +208,6 @@
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole"/>
-                        <swrl:argument1 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#b"/>
-                    </rdf:Description>
-                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -223,9 +218,9 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:argument1 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#a"/>
-                                        <swrl:argument2 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#b"/>
-                                        <swrl:propertyPredicate rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#constitutesRole"/>
+                                        <swrl:argument1 rdf:resource="&entTest;a"/>
+                                        <swrl:argument2 rdf:resource="&entTest;b"/>
+                                        <swrl:propertyPredicate rdf:resource="&entTest;constitutesRole"/>
                                     </rdf:Description>
                                 </rdf:first>
                             </rdf:Description>
@@ -233,13 +228,20 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                <swrl:argument2 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#b"/>
-                                <swrl:argument1 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#c"/>
-                                <swrl:propertyPredicate rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole"/>
+                                <swrl:argument2 rdf:resource="&entTest;b"/>
+                                <swrl:argument1 rdf:resource="&entTest;c"/>
+                                <swrl:propertyPredicate rdf:resource="&entTest;fulfillsRole"/>
                             </rdf:Description>
                         </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&entTest;MembershipRole"/>
+                        <swrl:argument1 rdf:resource="&entTest;b"/>
+                    </rdf:Description>
+                </rdf:first>
             </rdf:Description>
         </swrl:body>
         <swrl:head>
@@ -249,9 +251,9 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#a"/>
-                        <swrl:argument1 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#c"/>
-                        <swrl:propertyPredicate rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf"/>
+                        <swrl:argument2 rdf:resource="&entTest;a"/>
+                        <swrl:argument1 rdf:resource="&entTest;c"/>
+                        <swrl:propertyPredicate rdf:resource="&entTest;memberOf"/>
                     </rdf:Description>
                 </rdf:first>
             </rdf:Description>
@@ -267,8 +269,8 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:argument1 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#a"/>
-                        <swrl:classPredicate rdf:resource="&j.1;SocialEntity"/>
+                        <swrl:argument1 rdf:resource="&entTest;a"/>
+                        <swrl:classPredicate rdf:resource="&ent;SocialEntity"/>
                     </rdf:Description>
                 </rdf:first>
             </rdf:Description>
@@ -280,6 +282,14 @@
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&entTest;a"/>
+                        <swrl:argument1 rdf:resource="&entTest;c"/>
+                        <swrl:propertyPredicate rdf:resource="&entTest;memberOf"/>
+                    </rdf:Description>
+                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -287,20 +297,12 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole"/>
-                                <swrl:argument1 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#b"/>
+                                <swrl:classPredicate rdf:resource="&entTest;MembershipRole"/>
+                                <swrl:argument1 rdf:resource="&entTest;b"/>
                             </rdf:Description>
                         </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#a"/>
-                        <swrl:argument1 rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#c"/>
-                        <swrl:propertyPredicate rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf"/>
-                    </rdf:Description>
-                </rdf:first>
             </rdf:Description>
         </swrl:body>
     </rdf:Description>
