@@ -57,7 +57,9 @@
     <owl:NamedIndividual rdf:about="&entTest;Chewbacca">
         <rdf:type rdf:resource="&ent;Persona"/>
         <rdfs:label xml:lang="en">Chewbacca</rdfs:label>
+        <ent:fulfillsRole rdf:resource="&entTest;WookieGroupFounder"/>
         <ent:fulfillsRole rdf:resource="&entTest;WookieGroupMember"/>
+        <ent:fulfillsRole rdf:resource="&entTest;WookieLeader"/>
     </owl:NamedIndividual>
     
 
@@ -94,7 +96,9 @@
     <owl:NamedIndividual rdf:about="&entTest;WookieTribe">
         <rdf:type rdf:resource="&ent;Tribe"/>
         <rdfs:label xml:lang="en">Wookie Group</rdfs:label>
+        <ent:constRole rdf:resource="&entTest;WookieGroupFounder"/>
         <ent:constRole rdf:resource="&entTest;WookieGroupMember"/>
+        <ent:constRole rdf:resource="&entTest;WookieLeader"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
