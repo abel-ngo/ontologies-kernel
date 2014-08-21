@@ -9,7 +9,7 @@
     <uri id="Imports Wizard Entry" name="http://abel-ngo.github.io/km/rdf/bib.rdf" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/bib.rdf"/>
     <uri id="Imports Wizard Entry" name="http://abel-ngo.github.io/km/rdf/event.rdf" uri="file:/C:/Users/gimbal/Documents/workspaces/ws-abel-ngo/ontologies-kernel/src/main/rdf/event.rdf"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1408497908496" name="http://abel-ngo.github.io/km/rdf/entity-test.rdf" uri="entity-test.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1408497908496" name="http://abel-ngo.github.io/km/rdf/event-test.rdf" uri="event-test.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1408592965614" name="http://abel-ngo.github.io/km/rdf/entity-test.rdf" uri="entity-test.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1408592965614" name="http://abel-ngo.github.io/km/rdf/event-test.rdf" uri="event-test.rdf"/>
     </group>
 </catalog>

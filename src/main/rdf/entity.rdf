@@ -3,38 +3,37 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ent "http://abel-ngo.github.io/km/rdf/entity.rdf#" >
-    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
     <!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" >
-    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY sqwrl "http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#" >
 ]>
 
 
 <rdf:RDF xmlns="http://abel-ngo.github.io/km/rdf/entity.rdf#"
      xml:base="http://abel-ngo.github.io/km/rdf/entity.rdf"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
-     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:ent="http://abel-ngo.github.io/km/rdf/entity.rdf#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ent="http://abel-ngo.github.io/km/rdf/entity.rdf#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
     <owl:Ontology rdf:about="http://abel-ngo.github.io/km/rdf/entity.rdf">
-        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
         <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
-
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Ontology>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -42,48 +41,81 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
 
 
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#constFoundryRole -->
 
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#constRole -->
+    <owl:ObjectProperty rdf:about="&ent;constFoundryRole">
+        <rdfs:label xml:lang="en">constitutes foundry role</rdfs:label>
+        <rdfs:range rdf:resource="&ent;FoundryRole"/>
+        <rdfs:domain rdf:resource="&ent;SocialEntity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;constRole"/>
+    </owl:ObjectProperty>
+    
 
-    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#constRole">
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#constLdrRole -->
+
+    <owl:ObjectProperty rdf:about="&ent;constLdrRole">
+        <rdfs:label xml:lang="en">constitutes leadership role</rdfs:label>
+        <rdfs:range rdf:resource="&ent;LeadershipRole"/>
+        <rdfs:domain rdf:resource="&ent;SocialEntity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;constRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#constMemberRole -->
+
+    <owl:ObjectProperty rdf:about="&ent;constMemberRole">
+        <rdfs:label xml:lang="en">constitutes member role</rdfs:label>
+        <rdfs:range rdf:resource="&ent;MembershipRole"/>
+        <rdfs:domain rdf:resource="&ent;SocialEntity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;constRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#constRole -->
+
+    <owl:ObjectProperty rdf:about="&ent;constRole">
         <rdfs:label xml:lang="en">constitutes role</rdfs:label>
-        <rdfs:range rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
+        <rdfs:range rdf:resource="&ent;Role"/>
         <rdfs:domain rdf:resource="&ent;SocialEntity"/>
     </owl:ObjectProperty>
+    
 
 
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#fulfillsRole -->
 
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole -->
-
-    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole">
+    <owl:ObjectProperty rdf:about="&ent;fulfillsRole">
         <rdfs:label xml:lang="en">fulfills role</rdfs:label>
-        <rdfs:range rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:range rdf:resource="&ent;Role"/>
     </owl:ObjectProperty>
-
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf -->
-
-    <owl:ObjectProperty rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf">
-        <rdfs:label xml:lang="en">member of</rdfs:label>
-        <rdfs:range rdf:resource="&ent;Entity"/>
-        <rdfs:domain rdf:resource="&ent;Entity"/>
-    </owl:ObjectProperty>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#hasMember -->
 
     <owl:ObjectProperty rdf:about="&ent;hasMember">
         <rdfs:label xml:lang="en">has member</rdfs:label>
-        <owl:inverseOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#memberOf"/>
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
+        <owl:inverseOf rdf:resource="&ent;memberOf"/>
     </owl:ObjectProperty>
+    
 
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#memberOf -->
+
+    <owl:ObjectProperty rdf:about="&ent;memberOf">
+        <rdfs:label xml:lang="en">member of</rdfs:label>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+    </owl:ObjectProperty>
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#mngBy -->
@@ -94,7 +126,7 @@
         <rdfs:range rdf:resource="&ent;Entity"/>
         <owl:inverseOf rdf:resource="&ent;mngEnt"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#mngEnt -->
@@ -104,32 +136,32 @@
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#roleConstBy -->
 
     <owl:ObjectProperty rdf:about="&ent;roleConstBy">
         <rdfs:label xml:lang="en">role constituted by</rdfs:label>
-        <rdfs:domain rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
-        <owl:inverseOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#constRole"/>
+        <rdfs:domain rdf:resource="&ent;Role"/>
         <rdfs:range rdf:resource="&ent;SocialEntity"/>
+        <owl:inverseOf rdf:resource="&ent;constRole"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#roleFulfilledBy -->
 
     <owl:ObjectProperty rdf:about="&ent;roleFulfilledBy">
         <rdfs:label xml:lang="en">role fulfilled by</rdfs:label>
-        <rdfs:domain rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
-        <owl:inverseOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#fulfillsRole"/>
         <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Role"/>
+        <owl:inverseOf rdf:resource="&ent;fulfillsRole"/>
     </owl:ObjectProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -137,42 +169,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#FoundryRole -->
-
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#FoundryRole">
-        <rdfs:label xml:lang="en">Foundry Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
-    </owl:Class>
-
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#LeadershipRole -->
-
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#LeadershipRole">
-        <rdfs:label xml:lang="en">Leadership Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
-    </owl:Class>
-
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole -->
-
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#MembershipRole">
-        <rdfs:label xml:lang="en">Membership Role</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role"/>
-    </owl:Class>
-
-
-
-    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role -->
-
-    <owl:Class rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf#Role">
-        <rdfs:label xml:lang="en">Role</rdfs:label>
-    </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Agency -->
@@ -181,7 +178,7 @@
         <rdfs:label xml:lang="en">Agency</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;Practlnst"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Business -->
@@ -190,7 +187,7 @@
         <rdfs:label xml:lang="en">Business</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;Practlnst"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#ComcInst -->
@@ -199,7 +196,7 @@
         <rdfs:label xml:lang="en">Commercial Institution</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;StructInst"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Entity -->
@@ -208,7 +205,16 @@
         <rdfs:label xml:lang="en">Entity</rdfs:label>
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     </owl:Class>
+    
 
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#FoundryRole -->
+
+    <owl:Class rdf:about="&ent;FoundryRole">
+        <rdfs:label xml:lang="en">Foundry Role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;Role"/>
+    </owl:Class>
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#GovInst -->
@@ -217,7 +223,7 @@
         <rdfs:label xml:lang="en">Governmental Institution</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;StructInst"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#GroupEntity -->
@@ -227,7 +233,25 @@
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
         <rdfs:subClassOf rdf:resource="&ent;SocialEntity"/>
     </owl:Class>
+    
 
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#LeadershipRole -->
+
+    <owl:Class rdf:about="&ent;LeadershipRole">
+        <rdfs:label xml:lang="en">Leadership Role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#MembershipRole -->
+
+    <owl:Class rdf:about="&ent;MembershipRole">
+        <rdfs:label xml:lang="en">Membership Role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ent;Role"/>
+    </owl:Class>
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Persona -->
@@ -238,7 +262,7 @@
         <rdfs:subClassOf rdf:resource="&ent;Entity"/>
         <owl:disjointWith rdf:resource="&ent;SocialEntity"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Practlnst -->
@@ -247,7 +271,15 @@
         <rdfs:label xml:lang="en">Practical Institution</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;SocialInstitution"/>
     </owl:Class>
+    
 
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Role -->
+
+    <owl:Class rdf:about="&ent;Role">
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#SocInst -->
@@ -256,7 +288,7 @@
         <rdfs:label xml:lang="en">Social Institution</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;StructInst"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#SocialEntity -->
@@ -273,7 +305,7 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&ent;Entity"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#SocialInstitution -->
@@ -283,7 +315,7 @@
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <rdfs:subClassOf rdf:resource="&ent;SocialEntity"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#StructInst -->
@@ -292,7 +324,7 @@
         <rdfs:label xml:lang="en">Structural Institution</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;SocialInstitution"/>
     </owl:Class>
-
+    
 
 
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#Tribe -->
@@ -301,34 +333,34 @@
         <rdfs:label xml:lang="en">Tribe</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ent;GroupEntity"/>
     </owl:Class>
-
+    
 
 
     <!-- http://xmlns.com/foaf/0.1/Agent -->
 
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
-
+    
 
 
     <!-- http://xmlns.com/foaf/0.1/Group -->
 
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group"/>
-
+    
 
 
     <!-- http://xmlns.com/foaf/0.1/Organization -->
 
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
-
+    
 
 
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // General axioms
@@ -344,10 +376,10 @@
             <rdf:Description rdf:about="&ent;SocInst"/>
         </owl:members>
     </rdf:Description>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Rules
@@ -355,31 +387,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="&ent;a">
-        <rdf:type rdf:resource="&swrl;Variable"/>
-    </rdf:Description>
     <rdf:Description rdf:about="&ent;c">
         <rdf:type rdf:resource="&swrl;Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="&ent;b">
         <rdf:type rdf:resource="&swrl;Variable"/>
     </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head rdf:resource="&rdf;nil"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:argument1 rdf:resource="&ent;a"/>
-                        <swrl:classPredicate rdf:resource="&ent;SocialEntity"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
+    <rdf:Description rdf:about="&ent;a">
+        <rdf:type rdf:resource="&swrl;Variable"/>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&swrl;Imp"/>
@@ -397,6 +412,13 @@
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&ent;MembershipRole"/>
+                                <swrl:argument1 rdf:resource="&ent;b"/>
+                            </rdf:Description>
+                        </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -411,13 +433,6 @@
                                 </rdf:first>
                             </rdf:Description>
                         </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="&ent;MembershipRole"/>
-                                <swrl:argument1 rdf:resource="&ent;b"/>
-                            </rdf:Description>
-                        </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
             </rdf:Description>
@@ -443,6 +458,31 @@
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&ent;SocialEntity"/>
+                        <swrl:argument1 rdf:resource="&ent;a"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head rdf:resource="&rdf;nil"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;a"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;memberOf"/>
+                    </rdf:Description>
+                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -456,20 +496,12 @@
                         </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="&ent;a"/>
-                        <swrl:argument1 rdf:resource="&ent;c"/>
-                        <swrl:propertyPredicate rdf:resource="&ent;memberOf"/>
-                    </rdf:Description>
-                </rdf:first>
             </rdf:Description>
         </swrl:body>
     </rdf:Description>
-
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
