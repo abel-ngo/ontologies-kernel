@@ -87,6 +87,16 @@
     
 
 
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#founderOf -->
+
+    <owl:ObjectProperty rdf:about="&ent;founderOf">
+        <rdfs:label xml:lang="en">founder of</rdfs:label>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#fulfillsRole -->
 
     <owl:ObjectProperty rdf:about="&ent;fulfillsRole">
@@ -104,6 +114,16 @@
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
         <owl:inverseOf rdf:resource="&ent;memberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#leaderOf -->
+
+    <owl:ObjectProperty rdf:about="&ent;leaderOf">
+        <rdfs:label xml:lang="en">leader of</rdfs:label>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
     </owl:ObjectProperty>
     
 
@@ -401,24 +421,9 @@
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="&ent;b"/>
-                        <swrl:argument1 rdf:resource="&ent;c"/>
-                        <swrl:propertyPredicate rdf:resource="&ent;fulfillsRole"/>
-                    </rdf:Description>
-                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="&ent;MembershipRole"/>
-                                <swrl:argument1 rdf:resource="&ent;b"/>
-                            </rdf:Description>
-                        </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -433,8 +438,23 @@
                                 </rdf:first>
                             </rdf:Description>
                         </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&ent;LeadershipRole"/>
+                                <swrl:argument1 rdf:resource="&ent;b"/>
+                            </rdf:Description>
+                        </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;b"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;fulfillsRole"/>
+                    </rdf:Description>
+                </rdf:first>
             </rdf:Description>
         </swrl:body>
         <swrl:head>
@@ -446,11 +466,71 @@
                         <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
                         <swrl:argument2 rdf:resource="&ent;a"/>
                         <swrl:argument1 rdf:resource="&ent;c"/>
-                        <swrl:propertyPredicate rdf:resource="&ent;memberOf"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;leaderOf"/>
                     </rdf:Description>
                 </rdf:first>
             </rdf:Description>
         </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head rdf:resource="&rdf;nil"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest rdf:resource="&rdf;nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&ent;LeadershipRole"/>
+                                <swrl:argument1 rdf:resource="&ent;b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;a"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;leaderOf"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head rdf:resource="&rdf;nil"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest rdf:resource="&rdf;nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&ent;FoundryRole"/>
+                                <swrl:argument1 rdf:resource="&ent;b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;a"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;founderOf"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&swrl;Imp"/>
@@ -487,6 +567,118 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
                         <rdf:rest rdf:resource="&rdf;nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&ent;MembershipRole"/>
+                                <swrl:argument1 rdf:resource="&ent;b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;a"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;founderOf"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&ent;FoundryRole"/>
+                                <swrl:argument1 rdf:resource="&ent;b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="&ent;a"/>
+                                        <swrl:argument2 rdf:resource="&ent;b"/>
+                                        <swrl:propertyPredicate rdf:resource="&ent;constRole"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;b"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;fulfillsRole"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;a"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;memberOf"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;b"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;fulfillsRole"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="&ent;a"/>
+                                        <swrl:argument2 rdf:resource="&ent;b"/>
+                                        <swrl:propertyPredicate rdf:resource="&ent;constRole"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="&swrl;ClassAtom"/>
