@@ -8,6 +8,7 @@
     <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY bib "http://abel-ngo.github.io/km/rdf/bib.rdf#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ent "http://abel-ngo.github.io/km/rdf/entity.rdf#" >
     <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
@@ -32,8 +33,10 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:bib="http://abel-ngo.github.io/km/rdf/bib.rdf#"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
     <owl:Ontology rdf:about="http://abel-ngo.github.io/km/rdf/entity-test.rdf">
+        <owl:imports rdf:resource="http://abel-ngo.github.io/km/rdf/bib.rdf"/>
         <owl:imports rdf:resource="http://abel-ngo.github.io/km/rdf/entity.rdf"/>
         <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
         <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
@@ -60,6 +63,33 @@
         <ent:fulfillsRole rdf:resource="&entTest;WookieGroupFounder"/>
         <ent:fulfillsRole rdf:resource="&entTest;WookieGroupMember"/>
         <ent:fulfillsRole rdf:resource="&entTest;WookieLeader"/>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="&entTest;Chewbacca"/>
+        <bib:reference rdf:resource="&entTest;PersonalAnecdote"/>
+        <owl:annotatedTarget rdf:resource="&entTest;WookieGroupMember"/>
+        <owl:annotatedProperty rdf:resource="&ent;fulfillsRole"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="&entTest;Chewbacca"/>
+        <bib:reference rdf:resource="&entTest;PersonalAnecdote"/>
+        <owl:annotatedTarget rdf:resource="&entTest;WookieGroupFounder"/>
+        <owl:annotatedProperty rdf:resource="&ent;fulfillsRole"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="&entTest;Chewbacca"/>
+        <bib:reference rdf:resource="&entTest;PersonalAnecdote"/>
+        <owl:annotatedTarget rdf:resource="&entTest;WookieLeader"/>
+        <owl:annotatedProperty rdf:resource="&ent;fulfillsRole"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity-test.rdf#PersonalAnecdote -->
+
+    <owl:NamedIndividual rdf:about="&entTest;PersonalAnecdote">
+        <rdf:type rdf:resource="&rdfs;Resource"/>
+        <rdfs:label xml:lang="en">Personal Anecdote</rdfs:label>
     </owl:NamedIndividual>
     
 
