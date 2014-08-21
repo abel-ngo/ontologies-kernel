@@ -93,6 +93,7 @@
         <rdfs:label xml:lang="en">founder of</rdfs:label>
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;participantOf"/>
     </owl:ObjectProperty>
     
 
@@ -107,13 +108,48 @@
     
 
 
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#hasFounder -->
+
+    <owl:ObjectProperty rdf:about="&ent;hasFounder">
+        <rdfs:label xml:lang="en">has founder</rdfs:label>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;hasParticipant"/>
+        <owl:inverseOf rdf:resource="&ent;leaderOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#hasLeader -->
+
+    <owl:ObjectProperty rdf:about="&ent;hasLeader">
+        <rdfs:label xml:lang="en">has leader</rdfs:label>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;hasParticipant"/>
+        <owl:inverseOf rdf:resource="&ent;leaderOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#hasMember -->
 
     <owl:ObjectProperty rdf:about="&ent;hasMember">
         <rdfs:label xml:lang="en">has member</rdfs:label>
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;hasParticipant"/>
         <owl:inverseOf rdf:resource="&ent;memberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="&ent;hasParticipant">
+        <rdfs:label xml:lang="en">has participant</rdfs:label>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
     </owl:ObjectProperty>
     
 
@@ -124,6 +160,7 @@
         <rdfs:label xml:lang="en">leader of</rdfs:label>
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;participantOf"/>
     </owl:ObjectProperty>
     
 
@@ -134,6 +171,7 @@
         <rdfs:label xml:lang="en">member of</rdfs:label>
         <rdfs:domain rdf:resource="&ent;Entity"/>
         <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&ent;participantOf"/>
     </owl:ObjectProperty>
     
 
@@ -155,6 +193,17 @@
         <rdfs:label xml:lang="en">managing entity</rdfs:label>
         <rdfs:range rdf:resource="&ent;Entity"/>
         <rdfs:domain rdf:resource="&ent;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://abel-ngo.github.io/km/rdf/entity.rdf#participantOf -->
+
+    <owl:ObjectProperty rdf:about="&ent;participantOf">
+        <rdfs:label xml:lang="en">participant of</rdfs:label>
+        <rdfs:range rdf:resource="&ent;Entity"/>
+        <rdfs:domain rdf:resource="&ent;Entity"/>
+        <owl:inverseOf rdf:resource="&ent;hasParticipant"/>
     </owl:ObjectProperty>
     
 
@@ -424,6 +473,13 @@
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&ent;LeadershipRole"/>
+                                <swrl:argument1 rdf:resource="&ent;b"/>
+                            </rdf:Description>
+                        </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -438,13 +494,6 @@
                                 </rdf:first>
                             </rdf:Description>
                         </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="&ent;LeadershipRole"/>
-                                <swrl:argument1 rdf:resource="&ent;b"/>
-                            </rdf:Description>
-                        </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
                 <rdf:first>
@@ -478,6 +527,14 @@
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;a"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;leaderOf"/>
+                    </rdf:Description>
+                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -491,14 +548,6 @@
                         </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="&ent;a"/>
-                        <swrl:argument1 rdf:resource="&ent;c"/>
-                        <swrl:propertyPredicate rdf:resource="&ent;leaderOf"/>
-                    </rdf:Description>
-                </rdf:first>
             </rdf:Description>
         </swrl:body>
     </rdf:Description>
@@ -581,20 +630,6 @@
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="&ent;a"/>
-                        <swrl:argument1 rdf:resource="&ent;c"/>
-                        <swrl:propertyPredicate rdf:resource="&ent;founderOf"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -634,6 +669,20 @@
                 </rdf:first>
             </rdf:Description>
         </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;a"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;founderOf"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&swrl;Imp"/>
@@ -654,14 +703,6 @@
         <swrl:body>
             <rdf:Description>
                 <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:argument2 rdf:resource="&ent;b"/>
-                        <swrl:argument1 rdf:resource="&ent;c"/>
-                        <swrl:propertyPredicate rdf:resource="&ent;fulfillsRole"/>
-                    </rdf:Description>
-                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
                         <rdf:type rdf:resource="&swrl;AtomList"/>
@@ -688,6 +729,14 @@
                         </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:argument2 rdf:resource="&ent;b"/>
+                        <swrl:argument1 rdf:resource="&ent;c"/>
+                        <swrl:propertyPredicate rdf:resource="&ent;fulfillsRole"/>
+                    </rdf:Description>
+                </rdf:first>
             </rdf:Description>
         </swrl:body>
     </rdf:Description>
